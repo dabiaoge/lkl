@@ -39,11 +39,11 @@ cat: /dev/net/tun: No such device
 
 这样，你就可以访问VPS服务器的外网地址，端口为8888，密码为sspass，加密方式为aes-256-cfb的shadowsocks了！
 
-3、停止命令：
+3、停止命令：  
 **docker rm -f shadowsocks lkl**
 
 四、其他
-这个镜像的妙处，是可以对任意网络服务器进行加速，如果你的WEB服务器运行在1234端口，那么你可以这样来对这个端口进行加速：
+这个镜像的妙处，是可以对任意网络服务器进行加速，如果你的WEB服务器运行在1234端口，那么你可以这样来对这个端口进行加速：  
 docker run -d --privileged  -e  TARGET_HOST=服务器外网IP -e TARGET_PORT=1234   -p 80:8888     wuqz/lkl:latest 
 
 这样访问服务器的80端口，就是加速后访问WEB服务器了！
